@@ -3,7 +3,7 @@
         <!-- START Top Navbar-->
         <nav class="navbar topnavbar bg-warning">
            <!-- START navbar header-->
-           <div class="navbar-header"><a class="navbar-brand" href="#/">
+           <div class="navbar-header"><a class="navbar-brand" href="/">
                  <div class="brand-logo text-white">{{ config('app.name') }}</div>
                  <div class="brand-logo-collapsed"><img class="img-fluid" src="{{ asset('img/icon.png') }}" alt="App Logo"></div>
               </a></div><!-- END navbar header-->

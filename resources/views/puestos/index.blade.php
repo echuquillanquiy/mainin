@@ -2,5 +2,6 @@
 
 @section('content')
 
+<puesto-component></puesto-component>
 
 @endsection

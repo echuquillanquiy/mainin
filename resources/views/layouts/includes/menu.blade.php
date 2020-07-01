@@ -33,31 +33,31 @@
                </a>
              </li>
 
-             <li class=" "><a href="/" title="Puestos">
+             <li class=" "><a href="/puestos" title="Puestos">
                <em class="icon-layers text-primary"></em>
                <span data-localize="sidebar.nav.WIDGETS">Puestos</span>
                </a>
              </li>
 
-             <li class=" "><a href="/" title="Empresas Clientes">
+             <li class=" "><a href="/clientes" title="Empresas Clientes">
                <em class="far fa-building text-secondary"></em>
                <span data-localize="sidebar.nav.WIDGETS">Empresas Clientes</span>
                </a>
              </li>
 
-             <li class=" "><a href="/" title="Categorías">
+             <li class=" "><a href="/categorias" title="Categorías">
                <em class="far fa-share-square text-warning"></em>
                <span data-localize="sidebar.nav.WIDGETS">Categorías</span>
                </a>
              </li>
 
-             <li class=" "><a href="/" title="Montos por puesto">
+             <li class=""><a href="/montos" title="Montos por puesto">
                <em class="fas fa-money-bill-alt text-green"></em>
                <span data-localize="sidebar.nav.WIDGETS">Montos por puesto</span>
                </a>
              </li>
 
-             <li class=" "><a href="/" title="Áreas">
+             <li class=" "><a href="/areas" title="Áreas">
                <em class="fab fa-creative-commons-nd text-pink"></em>
                <span data-localize="sidebar.nav.WIDGETS">Áreas</span>
                </a>

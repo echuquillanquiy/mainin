@@ -1,10 +1,12 @@
-const { default: Swal } = require('sweetalert2');
-
 require('./bootstrap');
 
 window.Vue = require('vue');
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('puesto-component', require('./components/PuestoComponent.vue').default);
+Vue.component('cliente-component', require('./components/ClienteComponent.vue').default);
+Vue.component('categoria-component', require('./components/CategoriaComponent.vue').default);
+Vue.component('area-component', require('./components/AreaComponent.vue').default);
+Vue.component('monto-component', require('./components/MontoComponent.vue').default);
 
 
 

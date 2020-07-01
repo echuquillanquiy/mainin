@@ -16,7 +16,8 @@ class UserSeeder extends Seeder
             'name' => 'Raúl Eduardo Chuquillanqui Yupanqui',
             'username' => 'echuquillanquiy',
             'email' => 'echuquillanquiy@gmail.com',
-            'password' => bcrypt('12345678')
+            'password' => bcrypt('12345678'),
+            'role' => 'administrador'
         ]);
     }
 }

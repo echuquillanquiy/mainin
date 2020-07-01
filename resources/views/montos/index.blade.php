@@ -2,5 +2,6 @@
 
 @section('content')
 
+<monto-component></monto-component>
 
 @endsection

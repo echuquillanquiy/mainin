@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrador;
 
-use App\Puesto;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Puesto;
 
 class PuestoController extends Controller
 {
@@ -12,9 +13,15 @@ class PuestoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function positions()
+    {
+        return Puesto::orderBy('id', 'Desc')->get();   
+    }
+
     public function index()
     {
-        //
+        return view('puestos.index');
     }
 
     /**
@@ -35,16 +42,21 @@ class PuestoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $puesto = new Puesto;
+        $puesto->nombre = $request->nombre;
+        $puesto->descripcion = $request->descripcion;
+        $puesto->save();
+
+        return 'Puesto Guardado';
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Puesto  $puesto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Puesto $puesto)
+    public function show($id)
     {
         //
     }
@@ -52,10 +64,10 @@ class PuestoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Puesto  $puesto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Puesto $puesto)
+    public function edit($id)
     {
         //
     }
@@ -64,22 +76,27 @@ class PuestoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Puesto  $puesto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Puesto $puesto)
     {
-        //
+        $puesto->nombre = $request->nombre;
+        $puesto->descripcion = $request->descripcion;
+        $puesto->save();
+
+        return 'Puesto editado correctamente';
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Puesto  $puesto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Puesto $puesto)
     {
-        //
+        $puesto->delete();
+        return 'Registro eliminado correctamente';
     }
 }
