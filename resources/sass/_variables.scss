@@ -17,3 +17,14 @@ $yellow: #e5f050;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+.dropzone{
+    border: 2px dashed #c1c1c1;
+    .dz-error {
+        display: none;
+    }
+    dz.message .dz-button{
+        color: #666;
+    }
+}

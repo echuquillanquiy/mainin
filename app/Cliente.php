@@ -10,4 +10,5 @@ class Cliente extends Model
     {
         return $this->belongsTo(Contacto::class);
     }
+
 }

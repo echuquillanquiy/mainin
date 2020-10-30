@@ -2,5 +2,6 @@
 
 @section('content')
 
+<pueblo-component></pueblo-component>
 
 @endsection

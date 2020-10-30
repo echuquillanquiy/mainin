@@ -8,8 +8,6 @@ Vue.component('categoria-component', require('./components/CategoriaComponent.vu
 Vue.component('area-component', require('./components/AreaComponent.vue').default);
 Vue.component('monto-component', require('./components/MontoComponent.vue').default);
 
-
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -19,3 +17,5 @@ Vue.component('monto-component', require('./components/MontoComponent.vue').defa
 const app = new Vue({
     el: '#app',
 });
+
+

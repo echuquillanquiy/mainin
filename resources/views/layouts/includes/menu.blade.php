@@ -40,7 +40,7 @@
              </li>
 
              <li class=" "><a href="/clientes" title="Empresas Clientes">
-               <em class="far fa-building text-secondary"></em>
+               <em class="fas fa-building text-secondary"></em>
                <span data-localize="sidebar.nav.WIDGETS">Empresas Clientes</span>
                </a>
              </li>
@@ -66,7 +66,7 @@
              <li class="nav-heading"><span data-localize="sidebar.heading.HEADER">Panel Gestion de Recursos</span></li>
 
              <li class="">
-                <a href="/collaborators" title="Single View">
+                <a href="/colaboradors" title="Single View">
                    <em class="fas fa-users text-purple"></em>
                    <span>Colaboradores</span>
                 </a>
