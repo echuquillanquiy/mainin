@@ -19,5 +19,13 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'role' => 'administrador'
         ]);
+
+        User::create([
+            'name' => 'Milagros Talledo',
+            'username' => 'mtalledo',
+            'email' => 'm.tlledo@mainin.pe',
+            'password' => bcrypt('12345678'),
+            'role' => 'administrador'
+        ]);
     }
 }
