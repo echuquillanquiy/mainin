@@ -39,9 +39,15 @@
                         <td> {{ $colaborador->ubigeo_cod }} </td>
                         <td>
                             <div class="media">
+                                @if($colaborador->foto == null)
+                                    <a href="#">
+                                        <img class="img-circle img-sm" width="40" height="40" src="{{ asset('colaborador/fotoprueba.png') }}" alt="Foto Colaborador">
+                                    </a>
+                                @else
                                 <a href="">
-                                    <img class="rounded-square" width="40" height="40" src="/storage/colaboradores/{{ $colaborador->foto }}" alt="{{ $colaborador->nombres }}">
+                                    <img class="rounded-square" width="40" height="40" src="/storage/colaborador/{{ $colaborador->foto }}" alt="{{ $colaborador->nombres }}">
                                 </a>
+                                @endif
                             </div>
                         </td>
                         <td>
