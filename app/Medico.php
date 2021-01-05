@@ -21,4 +21,9 @@ class Medico extends Model
         return $this->belongsTo(Colaborador::class)->withDefault();
     }
 
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class)->withDefault();
+    }
+
 }

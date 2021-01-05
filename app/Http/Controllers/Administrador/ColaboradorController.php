@@ -16,6 +16,7 @@ use App\Medico;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rule;
 
 class ColaboradorController extends Controller
 {
@@ -192,9 +193,16 @@ class ColaboradorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Colaborador $colaborador)
     {
-        //
+        $departamentos = Departamento::all();
+        $ubigeos = Ubigeo::all();
+        $categorias = Categoria::all();
+        $montos = Monto::all();
+        $areas = Area::all();
+        $puestos = Puesto::all();
+        $clientes = Cliente::all();
+        return view('colaboradors.edit', compact('colaborador', 'departamentos', 'ubigeos', 'categorias', 'montos', 'areas', 'puestos', 'clientes'));
     }
 
     /**
@@ -204,9 +212,58 @@ class ColaboradorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Colaborador $colaborador)
     {
-        //
+        $entrevistador = auth()->user()->id;
+        $data = $request->validate([
+            'documento' => 'required',
+            'ndocumento' => ['required', Rule::unique('colaboradors')->ignore($colaborador->id)],
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'fechanac' => 'required',
+            'instruccion' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'correo' => 'required',
+            'departamento_id' => 'required',
+            'provincia_id' => 'required',
+            'distrito_id' => 'required',
+            'ubigeo_cod' => 'required',
+            'sexo' => 'required',
+            'estadocivil' => 'required',
+            'sanguineo' => 'required',
+            'hijos' => 'required',
+            'contacto' => 'required',
+            'telemeergencia' => 'required',
+            'tiempocasa' => 'required',
+            'banco' => 'required',
+            'cuentabancaria' => 'required',
+            'categoria' => 'required',
+            'monto' => 'required',
+            'area' => 'required',
+            'puesto' => 'required',
+            'respirador' => 'required',
+            'zapatos' => 'required',
+            'tallazapato' => 'required',
+            'tallapantalon' => 'required',
+            'tallacamisa' => 'required',
+            'talla' => 'required',
+            'peso' => 'required',
+            'imc' => 'nullable',
+            'diagnutricion' => 'nullable',
+            'especialidad' => 'nullable',
+            'inicioinduccion' => 'nullable',
+            'fininduccion' => 'nullable',
+            'lugarinduccion' => 'nullable',
+            'medio' => 'required',
+            'observaciones' => 'required',
+            'comentarios' => 'required',
+            'foto' => 'nullable',
+        ]);
+        $colaborador->fill($data);
+        $colaborador->save();
+        $notification = 'Se actualizó al colaborador correctamente.';
+        return redirect('/colaboradors')->withStatus('Se actualizo correctamente al colaborador '. $colaborador->nombres.', '. $colaborador->apellidos );
     }
 
     /**

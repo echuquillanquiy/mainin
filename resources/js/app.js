@@ -7,6 +7,7 @@ Vue.component('cliente-component', require('./components/ClienteComponent.vue').
 Vue.component('categoria-component', require('./components/CategoriaComponent.vue').default);
 Vue.component('area-component', require('./components/AreaComponent.vue').default);
 Vue.component('monto-component', require('./components/MontoComponent.vue').default);
+Vue.component('delete', require('./components/Eliminar.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

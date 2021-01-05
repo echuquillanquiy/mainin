@@ -3,10 +3,15 @@
 @section('content')
 
 <div class="card card-default">
-    @if (session('notificacion'))
+    @if (session('notification'))
         <span class="alert alert-success" role="alert">
-            {{ $notificacion }}
+            {{ $notification }}
         </span>
+    @endif
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
     @endif
     <div class="card-header text-right">
         <a href="{{ route('colaboradors.create') }}" class="btn btn-success btn-lg mr-1">Crear</a>
@@ -25,7 +30,8 @@
                    <th>Departamento</th>
                    <th>Ubigeo</th>
                    <th>foto</th>
-                   <th>Opciones</th>
+                   <th>Editar</th>
+                   <th>Mas opciones</th>
                 </tr>
              </thead>
              <tbody>
@@ -45,17 +51,16 @@
                                     </a>
                                 @else
                                 <a href="">
-                                    <img class="rounded-square" width="40" height="40" src="/storage/colaborador/{{ $colaborador->foto }}" alt="{{ $colaborador->nombres }}">
+                                    <img class="rounded-square" width="40" height="40" src="/storage/colaboradores/{{ $colaborador->foto }}" alt="{{ $colaborador->nombres }}">
                                 </a>
                                 @endif
                             </div>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-sm btn-info mr-1"><em class="fa fa-edit fa-fw text-white"></em></button>
-                            <button type="button" class="btn btn-sm btn-danger mr-1"><em class="fa fa-trash fa-fw"></em></button>
-                            <button type="button" class="btn btn-sm btn-success mr-1"><em class="fa fa-eye fa-fw text-white"></em></button>
-                            <button type="button" class="btn btn-sm btn-primary mr-1"><em class="fas fa-hospital fa-fw"></em></button>
-                            <button type="button" class="btn btn-sm btn-dark mr-1"><em class="far fa-address-book text-white"></em></button>
+                            <a  href="{{ url('/colaboradors/'.$colaborador->id.'/edit') }}" class="btn btn-sm btn-info mr-1"><em class="fa fa-edit fa-fw text-white"></em></a>
+                        </td>
+                        <td>
+                            
                         </td>
                     </tr>
                  @endforeach

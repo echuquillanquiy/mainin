@@ -146,7 +146,7 @@
                 toastr.error('Acción Cancelada!')
             }
             })
-        },
+            },
 
         EditarDato(dato){
             console.log(dato);
